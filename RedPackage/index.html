@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>a test</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <style rel="stylesheet">
+    </style>
+</head>
+<body>
+<img src="./img/game/game-zhi-1.png" class="preload-img">
+<img src="./img/game/game-zhi-2.png" class="preload-img">
+<img src="./img/game/game-zhi-3.png" class="preload-img">
+<img src="./img/game/game-zhi-4.png" class="preload-img">
+<img src="./img/game/game-zhi-5.png" class="preload-img">
+    <div id="content">
+        <div id="clock-big"><span  id="J_countdown_start">1</span></div>
+        <div id="index">
+            <div id="index-bg">
+                <div id="index-top"></div>
+                <div id="index-bottom"></div>
+            </div>
+            <div id="index-fg">
+                <div id="index-button"><span>开始游戏</span></div>
+                <div id="index-options">
+                    <span id="J_share" class="index-options">分享</span><span class="index-divide">|</span><span id="J_rank" class="index-options">点值排行榜</span>
+                </div>
+                <div id="index-rule"><span>活动规则</span></div>
+            </div>
+        </div>
+        <div id="game">
+            <div id="clock-small"><span  id="J_countdown_over">19S</span></div>
+            <div id="game-bg"></div>
+            <div id="game-content"></div>
+            <div id="game-fg"></div>
+        </div>
+        <div id="rank">
+            <div id="rank-bg"></div>
+            <div id="rank-content">
+                <div id="rank-info"><span>我的点值数:<span id="rank-zhi">20</span></span><span>我的排名:<span id="rank-ranking">78</span></span></div>
+                <div id="rank-divide"></div>
+                <ul id="rank-list">
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    <li><span class="rank-avatar"><img src="http://placehold.it/40x40"/></span><span class="rank-name">用户昵称</span><span class="rank-score">1008</span></li>
+                    </ul>
+            </div>
+            <div id="rank-fg">
+                <div id="rank-backToIndex"><span>返回主页</span></div>
+                <div id="rank-award"><span>查看奖品</span></div>
+            </div>
+        </div>
+    </div>
+    <div id="cover"></div>
+    <div id="pop-chance" class="pop">
+        <!--关闭弹窗-->
+        <i class="pop-close"></i>
+        <div id="pop-chance-fg">
+            <div id="pop-chance-msg"></div>
+            <div id="pop-chance-btn"></div>
+            <div id="pop-chance-divide"></div>
+            <div id="pop-chance-recommend-title"><span>今日推荐</span></div>
+            <a id="pop-chance-recommend" href="#"></a>
+        </div>
+        <div id="pop-chance-options">
+            <div id="pop-chance-share"><span>分享</span></div>
+            <div id="pop-chance-rank"><span>点击排行榜</span></div>
+        </div>
+    </div>
+    <div id="pop-award" class="pop"><i class="pop-close"></i></div>
+    <div id="pop-rule" class="pop">
+        <i class="pop-close"></i>
+        <div id="pop-rule-fg">
+            <div id="pop-rule-title"></div>
+            <div id="pop-rule-content">
+                <ol>
+                    <li>活动时间:2017年1月26日10:00:00-2017年2月1日 23:59:59。</li>
+                    <li>参与方式：进入什么值得买客户端“春  节点值赢大礼共度欢乐洒七天”活动入口即可参与。</li>
+                    <li>每天每个ID可参与3次。每天成功分享一次即可获得重玩机会,总计每人每天最多游戏5次。</li>
+                    <li>活动时间共计7天,依据用户7天点值总数的排名颁奖。</li>
+                    <li>点值总数排名前100位的用户,请在5个工作日内,在什么值得买“个人中心”填写收货信息,否则视为放弃奖品。</li>
+                    <li>奖品将在活动结束后约7个工作日发放。</li>
+                </ol>
+            </div>
+        </div>
+        <div id="pop-rule-bg"></div>
+    </div>
+    <div class="J_rpr_tpl rpr-tpl"><img src="./img/game/game-zhi-1.png" /><div class="J_add_one add-one">+1</div></div>
+    <!--游戏剩余次数隐藏域-->
+
+    <script src="jquery.js"></script>
+    <script src="static/js/index.js"></script>
+</body>
+</html>

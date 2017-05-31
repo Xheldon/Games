@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "app.css",
+	"sources": [
+		"app.scss"
+	],
+	"sourcesContent": [
+		"#map{\n    width: 800px;\n    height: 800px;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    margin-top: -400px;\n    margin-left: -400px;\n    border: 10px solid darkcyan;\n}\n#number{\n    height: 60%;\n    width: 100%;\n    position: absolute;\n    box-sizing: border-box;\n    transition: all 100ms linear 100ms;\n}\n#tank{\n    border: 2px solid skyblue;\n    position: absolute;\n}"
+	],
+	"mappings": "AAAA,IAAI,CAAA;EACA,KAAK,EAAE,KAAM;EACb,MAAM,EAAE,KAAM;EACd,QAAQ,EAAE,QAAS;EACnB,GAAG,EAAE,GAAI;EACT,IAAI,EAAE,GAAI;EACV,UAAU,EAAE,MAAO;EACnB,WAAW,EAAE,MAAO;EACpB,MAAM,EAAE,mBAAoB,GAC/B;;AACD,OAAO,CAAA;EACH,MAAM,EAAE,GAAI;EACZ,KAAK,EAAE,IAAK;EACZ,QAAQ,EAAE,QAAS;EACnB,UAAU,EAAE,UAAW;EACvB,UAAU,EAAE,sBAAuB,GACtC;;AACD,KAAK,CAAA;EACD,MAAM,EAAE,iBAAkB;EAC1B,QAAQ,EAAE,QAAS,GACtB",
+	"names": []
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<link href="./DO_NOT_TOUCH/bootstrap.css" rel="stylesheet">
+<link href="./DO_NOT_TOUCH/index.css" rel="stylesheet">
+<script src="./DO_NOT_TOUCH/mustache.js"></script>
+<script src="./DO_NOT_TOUCH/jquery-3.1.1.js"></script>
+<script src="./config.js"></script>
+</head>
+<body>
+<div class="container">	
+	<ul id="choice" class="row">
+		
+	</ul>
+</div>
+<div id="start">计算得分</div>
+<div id="restart">重新生成</div>
+<div id="who">提问</div>
+<div id="cover">
+    <div id="pop">
+        <div class="close">关闭</div>
+        <div class="pop-title">请:</div>
+        <div class="pop-msg"></div>
+        <div class="pop-footer">回答问题</div>
+        <span>确定</span>
+    </div>
+</div>
+<script id="template" type="x-tmpl-mustache">
+    {{#data}}
+        <li class="choice-items">
+            <div class="item-name">第{{show_num}}题</div>
+            <div class="item-ask">{{question}}</div>
+            <ul>
+            {{#options}}
+                <li>
+                    <span><span>{{option}}</span>.<input type="radio" name="第{{num}}题"></span><label>{{option_answer}}</label>
+                </li>
+            {{/options}}
+            </ul>
+            <input type="hidden" class="choice-result" ques-id="{{show_num}}" ques-total-id="{{num}}"  value="0"/>
+        </li>
+    {{/data}}
+</script>
+<script src="./DO_NOT_TOUCH/index.js"></script>
+</body>
+</html>

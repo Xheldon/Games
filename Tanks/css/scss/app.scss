@@ -1,0 +1,21 @@
+#map{
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -400px;
+    margin-left: -400px;
+    border: 10px solid darkcyan;
+}
+#number{
+    height: 60%;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    transition: all 100ms linear 100ms;
+}
+#tank{
+    border: 2px solid skyblue;
+    position: absolute;
+}

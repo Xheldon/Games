@@ -1,0 +1,23 @@
+{
+  "name": "redpackagerain",
+  "version": "1.0.0",
+  "description": "a game of red package rain",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "red",
+    "package",
+    "rain",
+    "xheldon"
+  ],
+  "author": "xheldon",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.6",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-uglify": "^2.0.0"
+  }
+}

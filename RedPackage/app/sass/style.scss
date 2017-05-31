@@ -1,0 +1,641 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    background-color: #1cdfcd;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    user-select: none;
+    font-size: 0;
+}
+div{
+    background-repeat: no-repeat;
+    position: relative;
+    font-size: 0;
+}
+@mixin makeAbsoluteEleCenter($direction) {
+    @if $direction == hori {
+        transform: translateX(-50%);
+        left: 50%;
+    }
+    @if $direction == verti {
+        transform: translateY(-50%);
+        top: 50%;
+    }
+    @if $direction == both {
+        transform: translateX(-50%) translateY(-50%);
+        top: 50%;
+        left: 50%;
+    }
+}
+@mixin makeFixed($type){
+    @if $type == abs {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    @if $type == fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+.rpr-tpl{
+    position: absolute;
+    display: none;
+    color: red;
+    .add-one{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        @include makeAbsoluteEleCenter(hori);
+        font-size:3rem;
+    }
+}
+.preload-img{
+    opacity: 0;
+    position: fixed;
+    top: -9999px;
+}
+#content{
+    @include makeFixed(abs);
+    font-size: 1.4rem;
+    color: red;
+    width: 100%;
+    height: 100%;
+    #index{
+        //首页
+        display: block;
+        @include makeFixed(abs);
+        #index-bg{
+            @include makeFixed(abs);
+            background-color: #d70d1d;
+            z-index: 1;
+            //background-color: blue;
+            #index-top{
+                position: absolute;
+                top: 0;
+                background-image: url('../../img/index/index-top.png');
+                background-size: contain;
+                padding-top: 138.13333%;
+                height: 0;
+                width: 100%;
+            }
+            #index-bottom{
+                position: absolute;
+                bottom: 0;
+                background-image: url('../../img/index/index-bottom.png');
+                background-size: contain;
+                padding-top: 48.8%;
+                height: 0;
+                width: 100%;
+            }
+        }
+        #index-fg{
+            position: absolute;
+            //bottom: 22.66%;
+            bottom: 15.66%;
+            //bottom: 0;
+            z-index: 2;
+            width: 100%;
+            #index-button{
+                @include makeAbsoluteEleCenter(hori);
+                background-image: url(../../img/index/index-button.png);
+                background-size: contain;
+                width: 52%;
+                padding-top: 14.8%;
+                text-align: center;
+                & > span{
+                    position: absolute;
+                    @include makeAbsoluteEleCenter(verti);
+                    left: 0;
+                    width: 100%;
+                    font-size: 3.4rem;
+                    color: white;
+                }
+            }
+            #index-options{
+                margin-top: 8%;
+                margin-bottom: 8%;
+                text-align: center;
+                font-size: 2rem;
+                color: #ffffff;
+                .index-options{
+                    font-size: 2rem;
+                    color: #ffffff;
+                }
+                .index-divide{
+                    margin: 0 4.667%;
+                }
+            }
+            #index-rule{
+                background-image: url(../../img/index/index-rule.png);
+                background-size: contain;
+                background-position: 50% 0;
+                padding-top: 8.4%;
+                height: 0;
+                text-align: center;
+                span{
+                    position: absolute;
+                    @include makeAbsoluteEleCenter(both);
+                    color: #ffffff;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+    #clock-big{
+        display: none;
+        z-index: 99999;
+        background-image: url(../../img/other/clock-big.png);
+        background-position: 50% 50%;
+        @include makeFixed(fixed);
+        background-size: cover;
+        text-align: center;
+        width: 100%;
+        //padding-top: 177.8667%;
+        span{
+            position: absolute;
+            font-size: 10rem;
+            color: #000;
+            @include makeAbsoluteEleCenter(both);
+            top: 48%;
+        }
+    }
+    #game{
+        display: none;
+        //游戏页
+        #clock-small{
+            position: fixed;
+            z-index: 40;
+            top: 3.6%;
+            @include makeAbsoluteEleCenter(hori);
+            background-image: url(../../img/other/clock-small.png);
+            background-size: contain;
+            width: 31.73%;
+            height: 0;
+            padding-top: 12%;
+            span{
+                position: absolute;
+                margin-left: 10px;
+                @include makeAbsoluteEleCenter(both);
+                top: 45%;
+                font-size: 2rem;
+                color: #ffffff;
+            }
+        }
+        #game-bg{
+            @include makeFixed(fixed);
+            background-image: url(../../img/game/game-bg.png);
+            background-size: contain;
+            background-repeat: repeat;
+            z-index: 10;
+        }
+        #game-content{
+            @include makeFixed(fixed);
+            z-index: 20;
+            & > div{
+                & > img{
+                    width: 100%;
+                }
+                position: absolute;
+            }
+        }
+        #game-fg{
+            position: fixed;
+            bottom: 0;
+            z-index: 30;
+            background-image: url(../../img/game/game-box.png);
+            background-size: contain;
+            padding-top: 79.0667%;
+            width: 100%;
+            height: 0;
+            pointer-events: none;
+        }
+    }
+    #rank{
+        background-image: url(../../img/rank/rank-bg-repeat.png);
+        background-size: contain;
+        background-repeat: repeat-y;
+        @include makeFixed(fixed);
+        #rank-bg{
+            position: absolute;
+            background-image: url(../../img/rank/rank-top.png);
+            background-size: contain;
+            z-index: 1;
+            width: 100%;
+            padding-top: 67.6%;
+        }
+        #rank-content{
+            position: absolute;
+            z-index: 5;
+            overflow: scroll;
+            left:0;
+            right: 0;
+            top: 22%;
+            bottom: 10%;
+            font-size: 2rem;
+            #rank-info{
+                width: 100%;
+                padding: 0 8.8%;
+                overflow: hidden;
+                box-sizing: border-box;
+                & > span{
+                    font-size: 2rem;
+                }
+                & > span:first-child{
+                    float: left;
+                }
+                & > span:last-child{
+                    float: right;
+                }
+            }
+            #rank-divide{
+                background-color: #f04848;
+                @include makeAbsoluteEleCenter(hori);
+                margin: 10px 0;
+                width: 90%;
+                height: 1px;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    @include makeAbsoluteEleCenter(both);
+                    background-color: #fff7e4;
+                    display: block;
+                    width: 5px;
+                    height: 5px;
+                    border: 1px solid #f04848;
+                    border-radius: 50%;
+                    box-shadow: 0 0 0 5px #fff7e4;
+                }
+            }
+            #rank-list{
+                padding: 0 8.8% 0 12.8%;
+                margin-top: 0;
+                margin-bottom: 0;
+                list-style-type: none;
+                & > li{
+                    position: relative;
+                    line-height: 50px;
+                    span{
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    .rank-avatar{
+                        border-radius: 50%;
+                        height: 100%;
+                        font-size: 0;
+                        line-height: 100%;
+                        margin-right: 15px;
+                        img{
+                            border-radius: 50%;
+                        }
+                    }
+                    .rank-name{
+
+                    }
+                    .rank-score{
+                        float: right;
+                    }
+                }
+                & >li:first-child, & >li:nth-child(2), & >li:nth-child(3){
+                    .rank-avatar:before{
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        transform: translateY(-90%) translateX(-50%);
+                        left: 50%;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        padding-top: 35.7142%;
+                        width: 60%;
+                        height: 0;
+                    }
+                    &:before{
+                        position: absolute;
+                        font-size: 3rem;
+                        //transform: translateX(-200%);
+                        left: -25px;
+                    }
+                }
+                & >li:first-child{
+                    .rank-avatar:before{
+                        background-image: url(../../img/rank/rank-gold.png);
+                    }
+                    &:before{
+                        content: '1';
+                        color: #facf32;
+                    }
+                }
+                & >li:nth-child(2){
+                    .rank-avatar:before{
+                        background-image: url(../../img/rank/rank-silver.png);
+                    }
+                    &:before{
+                        content: '2';
+                        color: #b9c7df;
+                    }
+                }
+                & >li:nth-child(3){
+                    .rank-avatar:before{
+                        background-image: url(../../img/rank/rank-copper.png);
+                    }
+                    &:before{
+                        content: '3';
+                        color: #d6a68a;
+                    }
+                }
+            }
+        }
+        #rank-fg{
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            background-image: url(../../img/rank/rank-bottom.png);
+            background-size: contain;
+            width: 100%;
+            padding-top: 38.5333%;
+            #rank-backToIndex,#rank-award{
+                position: absolute;
+                bottom: 5px;
+                background-image: url(../../img/rank/rank-btn.png);
+                background-size: contain;
+                padding-top: 8.2667%;
+                width: 31.333%;
+                height: 0;
+                color: #ffffff;
+                span{
+                    position: absolute;
+                    display: block;
+                    @include makeAbsoluteEleCenter(both);
+                    width: 100%;
+                    font-size:1.8rem;
+                    line-height: 100%;
+                    text-align: center;
+                }
+                &:after{
+                    content: '';
+                    height: 100%;
+                }
+            }
+            #rank-backToIndex{
+                left: 5.8%;
+            }
+            #rank-award{
+                right: 5.8%;
+            }
+        }
+    }
+}
+
+
+#cover{
+    @include makeFixed(fixed);
+    display: none;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.pop-close{
+    position: absolute;
+    transform: translateY(-100%);
+    right: -5px;
+    top: 0;
+    width: 8%;
+    padding-top: 8%;
+    height: 0;
+    border-radius: 50%;
+    border: 1px solid #fff1c3;
+    &:before, &:after{
+        content:'';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        height: 1px;
+        background-color: #fff1c3;
+    }
+    &:before{
+        transform: translate3d(-50%, -50%, 0) rotate(50deg);
+    }
+    &:after{
+        transform: translate3d(-50%, -50%, 0) rotate(-50deg);
+    }
+}
+.pop{
+    position: fixed;
+    @include makeAbsoluteEleCenter(both);
+    z-index: 99999;
+    width: 82.53333%;
+    text-align: center;
+    border-radius: 10px;
+}
+#pop-chance{
+    background-color: #d54040;
+    #pop-chance-fg{
+        padding-top: 25px;
+        border-radius: 10px;
+        border: 3px solid #ff7e69;
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    #pop-chance-msg{
+        text-align: center;
+        font-size: 2.4rem;
+        color: #fff1c3;
+    }
+    #pop-chance-btn{
+        position: relative;
+        display: inline-block;
+        background-image: url(../../img/pop/pop-btn.png);
+        background-size: contain;
+        width: 59.40%;
+        height: 0;
+        padding-top: 15.5%;
+        margin: 15px 0;
+        margin-bottom: 6px;
+        span{
+            position: absolute;
+            display: inline-block;
+            @include makeAbsoluteEleCenter(both);
+            font-size: 2.4rem;
+            letter-spacing: 2px;
+            color: white;
+            width: 100%;
+        }
+    }
+    #pop-chance-divide{
+        position: relative;
+        margin: 18px 6.6%;
+        margin-bottom: 16px;
+        border-top: 1px solid #f5bd81;
+        height: 0;
+        &:before{
+            content: '';
+            position: absolute;
+            @include makeAbsoluteEleCenter(both);
+            display: block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            border: 2px solid #f5bd81;
+        }
+    }
+    #pop-chance-recommend-title{
+        span{
+            position: relative;
+            font-size: 2rem;
+            color: #f5bd81;
+            &:before,&:after{
+                content:'';
+                position: absolute;
+                display: inline-block;
+                @include makeAbsoluteEleCenter(verti);
+                background-color: #f5bd81;
+                border-radius: 50%;
+                width: 3px;
+                height: 3px;
+            }
+            &:before{
+                left: -20%;
+            }
+            &:after{
+                right: -20%;
+            }
+        }
+    }
+    #pop-chance-recommend{
+        display: block;
+        padding: 20px 0;
+        padding-top: 12px;
+        text-decoration: none;
+        span{
+            font-size: 2rem;
+            color: #f5bd81;
+            word-break: break-all;
+        }
+    }
+    #pop-chance-options{
+        background-size: contain;
+        background-image: url(../../img/pop/pop-again.png);
+        padding-top: 30.21%;
+        width: 100%;
+        height: 0;
+        & > div{
+            position: absolute;
+            @include makeAbsoluteEleCenter(verti);
+            display: inline-block;
+            border: 1px solid #f5bd81;
+            width: 30.69%;
+            height: 0;
+            border-radius: 20px;
+            padding-top: 7.26%;
+            & > span{
+                display: inline-block;
+                @include makeAbsoluteEleCenter(both);
+                position: absolute;
+                width: 100%;
+                color: #ffffff;
+                font-size: 1.5rem;
+            }
+        }
+        #pop-chance-share{
+            left: 10%;
+        }
+        #pop-chance-rank{
+            right: 10%;
+        }
+    }
+}
+#pop-award{
+    position: fixed;
+    display: none;
+    @include makeAbsoluteEleCenter(both);
+    background-size: contain;
+    background-image: url(../../img/other/award.png);
+    z-index: 99999;
+    width: 82.53333%;
+    padding-top: 96.1333%;
+}
+#pop-rule{
+    position: fixed;
+    @include makeAbsoluteEleCenter(hori);
+    top: 5%;
+    bottom: 5%;
+    #pop-rule-fg{
+        background-color: #fef2e2;
+        overflow: hidden;
+        padding-top: 25px;
+        border-radius: 10px;
+        border: 3px solid #edc897;
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        height: 90%;
+        #pop-rule-title{
+            @include makeAbsoluteEleCenter(hori);
+            padding:15px 0;
+            border-top: 1px solid #f04848;
+            width: 90%;
+            height: 0;
+            &:before{
+                content: '活动规则';
+                @include makeAbsoluteEleCenter(both);
+                top: 0;
+                position: absolute;
+                background-color: #fef2e2;
+                display: block;
+                font-size: 2rem;
+                color: #f04848;
+                box-shadow: 0 0 0 10px #fef2e2;
+            }
+        }
+        #pop-rule-content{
+            position: absolute;
+            overflow: scroll;
+            top: 20px;
+            bottom: 0;
+            font-size: 1.6rem;
+            margin-top: 20px;
+            padding-bottom: 40px;
+            ol{
+                margin: 0;
+                padding: 0 10px;
+                text-align: left;
+                overflow: hidden;
+                list-style-position: inside;
+                li{
+                    position: relative;
+                    overflow: hidden;
+                    word-break: break-all;
+                    line-height: 1.5;
+                    margin: 20px 0;
+                }
+            }
+        }
+    }
+    #pop-rule-bg{
+        position: fixed;
+        background-image: url(../../img/pop/pop-rule.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        padding-top: 16.883%;
+    }
+}
+#clock-big, #game, #pop-chance, #pop-award, #rank, #pop-rule{
+    display: none;
+}
